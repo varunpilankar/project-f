@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id        String   @id @default(uuid())
+  email     String?  @unique
+  name      String?
+  role      String   @default("CUSTOMER")
+  createdAt DateTime @default(now())
+  orders    Order[]
+}
+model Product {
+  id             String           @id @default(uuid())
+  title          String
+  slug           String           @unique
+  description    String
+  category       String
+  ageBracket     String
+  gender         String           @default("UNISEX")
+  price          Decimal
+  compareAtPrice Decimal?
+  isBundle       Boolean          @default(false)
+  images         String           
+  rating         Float            @default(5.0)
+  inStock        Boolean          @default(true)
+  createdAt      DateTime         @default(now())
+  variants       ProductVariant[]
+  orderItems     OrderItem[]
+}
+model ProductVariant {
+  id              String      @id @default(uuid())
+  productId       String
+  product         Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  size            String
+  color           String?
+  sku             String      @unique
+  stockQuantity   Int         @default(0)
+  priceAdjustment Decimal     @default(0.00)
+  orderItems      OrderItem[]
+}
+model Order {
+  id                String      @id @default(uuid())
+  orderNumber       String      @unique
+  userId            String?
+  user              User?       @relation(fields: [userId], references: [id])
+  guestEmail        String?
+  shippingAddress   String      
+  subtotal          Decimal
+  discount          Decimal     @default(0.00)
+  shippingFee       Decimal     @default(0.00)
+  total             Decimal
+  paymentStatus     String      @default("PENDING")
+  paymentMethod     String
+  paymentIntentId   String?
+  fulfillmentStatus String      @default("CONFIRMED")
+  trackingNumber    String?
+  isGift            Boolean     @default(false)
+  giftMessage       String?
+  createdAt         DateTime    @default(now())
+  orderItems        OrderItem[]
+}
+model OrderItem {
+  id        String          @id @default(uuid())
+  orderId   String
+  order     Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product         @relation(fields: [productId], references: [id])
+  variantId String?
+  variant   ProductVariant? @relation(fields: [variantId], references: [id])
+  quantity  Int             @default(1)
+  price     Decimal
+}

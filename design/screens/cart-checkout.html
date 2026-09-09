@@ -1,0 +1,268 @@
+<main class="page-container">
+  <!-- Multi-Step Checkout Stepper Bar -->
+  <div class="checkout-stepper-bar">
+    <div class="stepper-step completed">
+      <span class="step-num">✓</span>
+      <span>1. Baby Bag Review</span>
+    </div>
+    <div class="stepper-divider"></div>
+    <div class="stepper-step active">
+      <span class="step-num">2</span>
+      <span>2. Shipping & Gift Options</span>
+    </div>
+    <div class="stepper-divider"></div>
+    <div class="stepper-step">
+      <span class="step-num">3</span>
+      <span>3. Stripe & UPI Payment</span>
+    </div>
+    <div class="stepper-divider"></div>
+    <div class="stepper-step">
+      <span class="step-num">4</span>
+      <span>4. Confirmation</span>
+    </div>
+  </div>
+
+  <div class="checkout-grid">
+    <!-- Left Column: Checkout Forms -->
+    <div class="checkout-form-column">
+      <!-- Account Mode Selection (Guest vs Member) -->
+      <div class="checkout-card-section">
+        <div class="account-type-toggle">
+          <button class="acc-tab-btn active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            Quick Guest Checkout
+          </button>
+          <button class="acc-tab-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            Sign In for SproutPoints (10% back)
+          </button>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Parent / Buyer Email *</label>
+            <input type="email" class="form-input" value="sarah.miller@example.com" placeholder="For instant receipt & order tracking" />
+          </div>
+          <div class="form-group">
+            <label>Mobile Number (For Delivery SMS) *</label>
+            <input type="tel" class="form-input" value="+1 (555) 234-8901" placeholder="+1 (555) 000-0000" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Shipping Destination -->
+      <div class="checkout-card-section">
+        <div class="checkout-section-title">
+          <span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-500)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Shipping & Nursery Address
+          </span>
+          <span style="font-size: 11px; color: var(--color-success); font-weight: 700;">🌱 Carbon-Neutral Delivery</span>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Recipient First Name *</label>
+            <input type="text" class="form-input" value="Sarah" />
+          </div>
+          <div class="form-group">
+            <label>Recipient Last Name *</label>
+            <input type="text" class="form-input" value="Miller" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Street Address / Apartment *</label>
+          <input type="text" class="form-input" value="742 Evergreen Terrace, Apt 4B" />
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>City *</label>
+            <input type="text" class="form-input" value="Seattle" />
+          </div>
+          <div class="form-group">
+            <label>State & Postal / ZIP Code *</label>
+            <input type="text" class="form-input" value="WA 98101" />
+          </div>
+        </div>
+
+        <!-- Gift Message Option Card -->
+        <div class="gift-option-card">
+          <label class="gift-checkbox-row">
+            <input type="checkbox" checked class="custom-checkbox" />
+            <span>🎁 This is a baby gift! Include free gift wrapping & personalized handwritten card</span>
+          </label>
+          <textarea class="gift-note-textarea" rows="2" placeholder="Write your warm wishes for the little sprout...">Welcome to the world, precious baby Maya! We are so excited to watch you grow. With all our love, Aunt Sarah & Uncle Liam 💛</textarea>
+        </div>
+      </div>
+
+      <!-- Payment Method Gateway (Stripe Elements & UPI) -->
+      <div class="checkout-card-section">
+        <div class="checkout-section-title">
+          <span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-500)" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            Select Payment Method
+          </span>
+          <span style="font-size: 11px; color: #64748B;">🔒 256-Bit SSL Encrypted</span>
+        </div>
+
+        <!-- Payment Method Tabs -->
+        <div class="payment-tabs-header">
+          <div class="payment-method-card active">
+            <div class="pay-icon-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              <span class="pay-label-bold">Credit / Debit</span>
+            </div>
+            <span style="font-size: 10px; color: #64748B;">via Stripe</span>
+          </div>
+
+          <div class="payment-method-card">
+            <div class="pay-icon-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <span class="pay-label-bold">Instant UPI</span>
+            </div>
+            <span style="font-size: 10px; color: #7C3AED;">GPay / PhonePe / QR</span>
+          </div>
+
+          <div class="payment-method-card">
+            <div class="pay-icon-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2z"></path><path d="M8 12l2.5 2.5L16 9"></path></svg>
+              <span class="pay-label-bold">Apple / G-Pay</span>
+            </div>
+            <span style="font-size: 10px; color: #64748B;">1-Tap Express</span>
+          </div>
+        </div>
+
+        <!-- Stripe Card Input Mockup -->
+        <div class="stripe-container-box">
+          <div class="stripe-header-row">
+            <span>Card Information (Powered by Stripe)</span>
+            <div class="stripe-logos">
+              <span class="card-brand-pill">VISA</span>
+              <span class="card-brand-pill">MC</span>
+              <span class="card-brand-pill">AMEX</span>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label>Card Number</label>
+            <input type="text" class="form-input" value="4242 •••• •••• 4242" placeholder="4242 0000 0000 4242" />
+          </div>
+
+          <div class="form-row-2" style="margin-bottom: 0;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label>Expires (MM / YY)</label>
+              <input type="text" class="form-input" value="11 / 28" placeholder="MM / YY" />
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label>CVC / Security Code</label>
+              <input type="password" class="form-input" value="•••" placeholder="CVC" />
+            </div>
+          </div>
+        </div>
+
+        <!-- UPI Instant Pay Option Preview -->
+        <div class="upi-container-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-size: 13px; font-weight: 800; color: #581C87;">⚡ Fast UPI Payment (Zero Surcharge)</span>
+            <span style="font-size: 11px; color: #7E22CE; font-weight: 700;">Instant Verification</span>
+          </div>
+          <div class="upi-apps-row">
+            <span class="upi-app-badge">Google Pay</span>
+            <span class="upi-app-badge">PhonePe</span>
+            <span class="upi-app-badge">Paytm UPI</span>
+            <span class="upi-app-badge">BHIM</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <input type="text" class="form-input" style="flex: 1;" placeholder="Enter your UPI ID (e.g. mobile@oksbi)" value="sarah.sprouts@okaxis" />
+            <button class="btn-secondary" style="padding: 10px 18px; font-size: 12px;">Verify UPI ID</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Sticky Order Summary & Products in Bag -->
+    <div class="order-summary-sidebar">
+      <div class="order-summary-title">
+        <h3>Order Summary</h3>
+        <span class="items-count-tag">3 Organic Items</span>
+      </div>
+
+      <!-- Items List in Bag -->
+      <div class="checkout-cart-list">
+        <div class="checkout-cart-item">
+          <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=120&auto=format&fit=crop&q=80" class="cart-item-img" alt="Ribbed Romper" />
+          <div class="cart-item-details">
+            <div class="cart-item-title">Organic Ribbed Baby Romper</div>
+            <div class="cart-item-sub">Size: 0–6M • Sprout Peach • Qty: 1</div>
+          </div>
+          <div class="cart-item-price">$24.00</div>
+        </div>
+
+        <div class="checkout-cart-item">
+          <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=120&auto=format&fit=crop&q=80" class="cart-item-img" alt="Wooden Rattle" />
+          <div class="cart-item-details">
+            <div class="cart-item-title">Natural Beechwood Sensory Teether</div>
+            <div class="cart-item-sub">Age: 3–12M • Food Grade • Qty: 1</div>
+          </div>
+          <div class="cart-item-price">$18.50</div>
+        </div>
+
+        <div class="checkout-cart-item">
+          <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=120&auto=format&fit=crop&q=80" class="cart-item-img" alt="Bamboo Swaddle" />
+          <div class="cart-item-details">
+            <div class="cart-item-title">Organic Muslin Cloud Swaddle (2-Pack)</div>
+            <div class="cart-item-sub">Color: Meadow Sage • Qty: 1</div>
+          </div>
+          <div class="cart-item-price">$46.50</div>
+        </div>
+      </div>
+
+      <!-- Promo Code Input -->
+      <div class="promo-code-box">
+        <input type="text" class="promo-input" value="SPROUT10" />
+        <button class="promo-apply-btn">Applied ✓</button>
+      </div>
+
+      <!-- Cost Calculation Breakdown -->
+      <div class="summary-cost-breakdown">
+        <div class="cost-row">
+          <span>Items Subtotal</span>
+          <span>$89.00</span>
+        </div>
+        <div class="cost-row discount-row">
+          <span>Sprout Promo (10% Off)</span>
+          <span>-$8.90</span>
+        </div>
+        <div class="cost-row">
+          <span>Eco Kraft Gift Packaging</span>
+          <span style="color: var(--color-success); font-weight: 700;">FREE (Gift Promotion)</span>
+        </div>
+        <div class="cost-row">
+          <span>Carbon-Neutral Standard Delivery</span>
+          <span style="color: var(--color-success); font-weight: 700;">FREE (Over $45)</span>
+        </div>
+        <div class="cost-row">
+          <span>Estimated Sales Tax</span>
+          <span>$4.45</span>
+        </div>
+        <div class="cost-row total-row">
+          <span>Total to Pay</span>
+          <span style="color: var(--color-primary-600);">$84.55</span>
+        </div>
+      </div>
+
+      <!-- Complete Order Button -->
+      <a href="#" class="place-order-big-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        Pay $84.55 & Place Order
+      </a>
+
+      <div class="guarantee-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage-500)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        30-Day Gentle Baby Guarantee • Zero-Hassle Exchanges
+      </div>
+    </div>
+  </div>
+</main>
